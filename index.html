@@ -11,7 +11,7 @@
     <script defer src="./assets/js/script.js"></script>
 </head>
 <body class="container viewport">
-    <div class="row">
+    <section class="row">
         <div class="col col-md-6">
           <form id="formbudget">
             <label for="inputbudget">Ingresa tu presupuesto</label>
@@ -22,9 +22,9 @@
         <div class="col col-md-6">
             <form id="formexpenditure">
                 <label for="inputexpenditurename">Ingresa el nombre del gasto</label>
-                <input id="inputexpenditurename" class="form-control" type="text" aria-label=".form-control-lg example">
+                <input id="inputexpenditurename" class="form-control" type="text" aria-label=".form-control-lg example" required>
                 <label for="inputexpenditurevalue">Ingresa la cantidad del gasto</label>
-                <input id="inputexpenditurevalue" class="form-control" type="number" placeholder="0" aria-label=".form-control-lg example">
+                <input id="inputexpenditurevalue" class="form-control" type="number" placeholder="0" aria-label=".form-control-lg example" min="1" required>
                 <button type="submit" class="btn btn-danger mb-3 mt-3">Anadir Gasto</button>
             </form>
         </div>
@@ -32,13 +32,13 @@
             <!-- Saldos -->
             <section>
               
-                <p>Presupuesto $</p>
+                <p>Presupuesto $<span id="txtpresupuesto" class="badge text-bg-primary">0</span></p>
               
               
-                <p>Gastos $</p>
+                <p>Gastos $<span class="badge text-bg-primary">0</span></p>
               
               
-                <p>Saldos $</p>
+                <p>Saldos $<span class="badge text-bg-primary">0</span></p>
               
             </section>
             <!-- Gastos -->
@@ -67,7 +67,7 @@
                 </tbody>
               </table>
         </div>
-      </div>
+      </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>
