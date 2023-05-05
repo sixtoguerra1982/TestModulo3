@@ -8,6 +8,9 @@ const BUDGET = {
             sum += item.valor
         })
         return sum
+    },
+    saldo: function(){
+        return this.presupuesto - this.sumaGastos()
     }
 }
 
@@ -41,6 +44,8 @@ formBudget.addEventListener("submit", (event) =>{
     if (inputBudgetValue) {
         txtPresupuesto.innerHTML = formatNumber(inputBudgetValue)
         BUDGET.presupuesto = inputBudgetValue
+        document.getElementById("txtgastos").innerHTML = formatNumber(BUDGET.sumaGastos())
+        document.getElementById("txtsaldos").innerHTML = formatNumber(BUDGET.saldo())
     } else {
         alert("Ingrese Presupuesto")
     }
@@ -74,4 +79,5 @@ formExpenditure.addEventListener("submit", (event) =>{
 
 
     document.getElementById("txtgastos").innerHTML = formatNumber(BUDGET.sumaGastos())
+    document.getElementById("txtsaldos").innerHTML = formatNumber(BUDGET.saldo())
 })
