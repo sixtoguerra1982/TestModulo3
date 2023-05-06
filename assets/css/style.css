@@ -6,12 +6,6 @@
 
 body{
     background-color: white;
-    color: blue;
-}
-
-.viewport{
-    min-width: 100%;
-    min-height: 100%;
 }
 
 .frameone {
@@ -35,4 +29,16 @@ body{
 .framestandar {
     padding: 10px;
     margin: 10px;
+}
+
+.framestandartwo {
+    padding-top: 5%;
+}
+
+.saldo{
+    font-size: 2rem;
+}
+
+.saldo::before {
+    content: "$";
 }

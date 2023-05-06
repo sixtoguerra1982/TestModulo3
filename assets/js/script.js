@@ -79,11 +79,10 @@ formExpenditure.addEventListener("submit", (event) =>{
     let newRow = document.getElementsByTagName("tbody")[0]
     newRow.innerHTML += `
                         <tr id="elemento${id}">
-                            <th scope="row">${BUDGET.gastos.length}</th>
                             <td>${capitalizar(objGasto.gasto)}</td>
                             <td>${formatNumber(objGasto.valor)}</td>
                             <td>
-                                <a href="#" onclick="borrarGasto(${id})" >Borrar</a>
+                                <a href="#" onclick="borrarGasto(${id})" ><i class="bi bi-trash3"></i></a>
                             </td>
                         </tr>`
 

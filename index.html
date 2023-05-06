@@ -7,10 +7,11 @@
     <title>Prueba Módulo 3 => JS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script defer src="./assets/js/script.js"></script>
 </head>
-<body class="container viewport">
+<body class="container  mt-5 framestandartwo">
     <section class="row">
 
         <!-- Fomulario A -->
@@ -26,13 +27,13 @@
         <div class="col col-md-6">
           <section class="row framestandar">
             
-              <div class="col-12 col-md-4"><p>Presupuesto $<p id="txtpresupuesto" class="badge text-bg-primary">0</p></p></div>
+              <div class="col-12 col-md-4"><p>PRESUPUESTO</p><p id="txtpresupuesto" class="saldo">0</p></div>
             
             
-              <div class="col-12 col-md-4"><p>Gastos $<p id="txtgastos" class="badge text-bg-primary">0</p></p></div>
+              <div class="col-12 col-md-4"><p>GASTOS</p><p id="txtgastos" class="saldo">0</p></div>
             
             
-              <div class="col-12 col-md-4"><p>Saldos $<p id="txtsaldos" class="badge text-bg-primary">0</p></p></div>
+              <div class="col-12 col-md-4"><p>SALDO</p><p id="txtsaldos" class="saldo">0</p></div>
             
           </section>
         </div>
@@ -53,7 +54,6 @@
           <table class="framestandar table">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
                   <th scope="col">Gasto</th>
                   <th scope="col">Valor</th>
                   <th colspan="2">&nbsp;</th>
