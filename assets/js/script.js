@@ -35,6 +35,13 @@ function capitalizar(str) {
     });
 }
 
+
+let refreshResultados = () => {
+    
+    document.getElementById("txtgastos").innerHTML = formatNumber(BUDGET.sumaGastos())
+    document.getElementById("txtsaldos").innerHTML = formatNumber(BUDGET.saldo())
+}
+
 // Formulario de ingreso presupuesto
 const formBudget = document.getElementById("formbudget")
 formBudget.addEventListener("submit", (event) =>{
@@ -42,10 +49,17 @@ formBudget.addEventListener("submit", (event) =>{
     let txtPresupuesto = document.getElementById("txtpresupuesto")
     let inputBudgetValue = parseInt(document.getElementById("inputbudget").value)
     if (inputBudgetValue) {
+
         txtPresupuesto.innerHTML = formatNumber(inputBudgetValue)
         BUDGET.presupuesto = inputBudgetValue
-        document.getElementById("txtgastos").innerHTML = formatNumber(BUDGET.sumaGastos())
-        document.getElementById("txtsaldos").innerHTML = formatNumber(BUDGET.saldo())
+
+        txtPresupuesto.className += " blink"
+
+        setTimeout(function() {
+            txtPresupuesto.className = "saldo"
+        },5000)
+
+        refreshResultados()
     } else {
         alert("Ingrese Presupuesto")
     }
@@ -87,8 +101,13 @@ formExpenditure.addEventListener("submit", (event) =>{
                         </tr>`
 
 
-    document.getElementById("txtgastos").innerHTML = formatNumber(BUDGET.sumaGastos())
-    document.getElementById("txtsaldos").innerHTML = formatNumber(BUDGET.saldo())
+    refreshResultados()
+
+    document.getElementById("txtgastos").className += " blink"
+
+    setTimeout(function() {
+        document.getElementById("txtgastos").className = "saldo"
+    },5000)
 })
 
 // Acción de eliminar un elemento
@@ -103,7 +122,6 @@ const borrarGasto = (id) => {
         return true;
     });
 
-    document.getElementById("txtgastos").innerHTML = formatNumber(BUDGET.sumaGastos())
-    document.getElementById("txtsaldos").innerHTML = formatNumber(BUDGET.saldo())
+    refreshResultados()
 
 }
