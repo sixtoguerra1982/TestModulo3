@@ -13,3 +13,26 @@ body{
     min-width: 100%;
     min-height: 100%;
 }
+
+.frameone {
+    border: 2px solid #71b971;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: #ebffeb;
+    color: black;
+}
+
+.frametwo {
+    border: 2px solid #c76a6a;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: #ffd6d6;
+    color: black;
+}
+
+.framestandar {
+    padding: 10px;
+    margin: 10px;
+}

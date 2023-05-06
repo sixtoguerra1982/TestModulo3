@@ -12,51 +12,59 @@
 </head>
 <body class="container viewport">
     <section class="row">
+
+        <!-- Fomulario A -->
         <div class="col col-md-6">
-          <form id="formbudget">
+          <form class="frameone" id="formbudget">
             <label for="inputbudget">Ingresa tu presupuesto</label>
             <input id="inputbudget" class="form-control" type="number" placeholder="0" aria-label=".form-control-lg example">
-            <button type="submit" class="btn btn-primary mb-3 mt-3">Calcular</button>
+            <button type="submit" class="btn btn-primary mb-3 mt-3 frameone">Calcular</button>
           </form>
         </div>
+        
+        <!-- Saldos -->
         <div class="col col-md-6">
-            <form id="formexpenditure">
-                <label for="inputexpenditurename">Ingresa el nombre del gasto</label>
-                <input id="inputexpenditurename" class="form-control" type="text" aria-label=".form-control-lg example" required>
-                <label for="inputexpenditurevalue">Ingresa la cantidad del gasto</label>
-                <input id="inputexpenditurevalue" class="form-control" type="number" placeholder="0" aria-label=".form-control-lg example" min="1" required>
-                <button type="submit" class="btn btn-danger mb-3 mt-3">Anadir Gasto</button>
-            </form>
+          <section class="row framestandar">
+            
+              <div class="col-12 col-md-4"><p>Presupuesto $<p id="txtpresupuesto" class="badge text-bg-primary">0</p></p></div>
+            
+            
+              <div class="col-12 col-md-4"><p>Gastos $<p id="txtgastos" class="badge text-bg-primary">0</p></p></div>
+            
+            
+              <div class="col-12 col-md-4"><p>Saldos $<p id="txtsaldos" class="badge text-bg-primary">0</p></p></div>
+            
+          </section>
         </div>
-        <div class="col col-md-12">
-            <!-- Saldos -->
-            <section>
-              
-                <p>Presupuesto $<span id="txtpresupuesto" class="badge text-bg-primary">0</span></p>
-              
-              
-                <p>Gastos $<span id="txtgastos" class="badge text-bg-primary">0</span></p>
-              
-              
-                <p>Saldos $<span id="txtsaldos" class="badge text-bg-primary">0</span></p>
-              
-            </section>
-            <!-- Gastos -->
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Gasto</th>
-                    <th scope="col">Valor</th>
-                    <th colspan="2">&nbsp;</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  
-                </tbody>
-              </table>
+
+        <!-- Fomulario B -->
+        <div class="col col-md-6">
+          <form class="frametwo" id="formexpenditure">
+              <label for="inputexpenditurename">Ingresa el nombre del gasto</label>
+              <input id="inputexpenditurename" class="form-control" type="text" aria-label=".form-control-lg example" required>
+              <label for="inputexpenditurevalue">Ingresa la cantidad del gasto</label>
+              <input id="inputexpenditurevalue" class="form-control" type="number" placeholder="0" aria-label=".form-control-lg example" min="1" required>
+              <button type="submit" class="btn btn-danger mb-3 mt-3 frametwo">Anadir Gasto</button>
+          </form>
+        </div>
+
+        <!-- Gastos -->
+        <div class="col col-md-6">
+          <table class="framestandar table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Gasto</th>
+                  <th scope="col">Valor</th>
+                  <th colspan="2">&nbsp;</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+              </tbody>
+            </table>
         </div>
       </section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>
