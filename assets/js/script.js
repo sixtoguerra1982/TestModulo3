@@ -60,24 +60,51 @@ formExpenditure.addEventListener("submit", (event) =>{
     inputExpenditureName = document.getElementById("inputexpenditurename")
     inputExpenditureValue = document.getElementById("inputexpenditurevalue")
 
-    let arrayGasto = { gasto: inputExpenditureName.value, valor: parseInt(inputExpenditureValue.value)}
-    BUDGET.gastos.push(arrayGasto)
+    let id = idUnique()
+
+
+    let objGasto = { 
+                    valor: parseInt(inputExpenditureValue.value), 
+                    id: id,
+                    gasto: inputExpenditureName.value
+                }
+
+    BUDGET.gastos.push(objGasto)
     console.log(BUDGET)
 
     inputExpenditureName.value = ""
     inputExpenditureValue.value = ""
 
-    let id = idUnique()
+    
     let newRow = document.getElementsByTagName("tbody")[0]
     newRow.innerHTML += `
-                        <tr id="${id}">
+                        <tr id="elemento${id}">
                             <th scope="row">${BUDGET.gastos.length}</th>
-                            <td>${capitalizar(arrayGasto.gasto)}</td>
-                            <td>${formatNumber(arrayGasto.valor)}</td>
-                            <td>${'---'}</td>
+                            <td>${capitalizar(objGasto.gasto)}</td>
+                            <td>${formatNumber(objGasto.valor)}</td>
+                            <td>
+                                <a href="#" onclick="borrarGasto(${id})" >Borrar</a>
+                            </td>
                         </tr>`
 
 
     document.getElementById("txtgastos").innerHTML = formatNumber(BUDGET.sumaGastos())
     document.getElementById("txtsaldos").innerHTML = formatNumber(BUDGET.saldo())
 })
+
+// Acción de eliminar un elemento
+const borrarGasto = (id) => {
+    
+    BUDGET.gastos = BUDGET.gastos.filter((gasto) => {
+        if (gasto.id == id) {
+            let filaABorrar = document.getElementById("elemento" + gasto.id)
+            filaABorrar.remove();
+            return false;
+        }
+        return true;
+    });
+
+    document.getElementById("txtgastos").innerHTML = formatNumber(BUDGET.sumaGastos())
+    document.getElementById("txtsaldos").innerHTML = formatNumber(BUDGET.saldo())
+
+}
